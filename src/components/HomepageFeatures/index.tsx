@@ -9,6 +9,13 @@ type FeatureItem = {
   description: ReactNode;
 };
 
+const notes = [
+  'Pipeline de calidad activo',
+  'Promocion controlada de develop a staging',
+  'Despliegue de staging en GitHub Pages',
+  'Cambio visible desde develop',
+];
+
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
@@ -64,6 +71,14 @@ export default function HomepageFeatures(): ReactNode {
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
+        </div>
+        <div className="margin-top--lg">
+          <Heading as="h2">Notas del pipeline</Heading>
+          <ul>
+            {notes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
